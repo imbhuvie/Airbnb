@@ -19,8 +19,6 @@ public class UserService {
 
     @Autowired
     AuthenticationManager authenticationManager;
-    @Autowired
-    JWTService jwtService;
 
     private BCryptPasswordEncoder encoder=new BCryptPasswordEncoder(12);
 
@@ -34,6 +32,6 @@ public class UserService {
     }
 
     public String verify(User user) {
-        return "";
+        return "Loged in";
     }
 }
