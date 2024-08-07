@@ -14,11 +14,15 @@ import java.util.List;
 
 @Service
 public class UserService {
+
     @Autowired
     UserRepository userRepository;
 
     @Autowired
     AuthenticationManager authenticationManager;
+
+    @Autowired
+    JWTService jwtService;
 
     private BCryptPasswordEncoder encoder=new BCryptPasswordEncoder(12);
 
@@ -32,6 +36,6 @@ public class UserService {
     }
 
     public String verify(User user) {
-        return "Loged in";
+        return jwtService.generateToken(user.getUsername());
     }
 }

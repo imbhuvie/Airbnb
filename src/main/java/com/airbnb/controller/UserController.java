@@ -16,10 +16,10 @@ public class UserController {
     @Autowired
     UserService userService;
 
-//    @GetMapping("/csrf-token")
-//    public CsrfToken getCrsfToken(HttpServletRequest request){
-//        return (CsrfToken) request.getAttribute("_csrf");
-//    }
+    @GetMapping("/csrf-token")
+    public CsrfToken getCrsfToken(HttpServletRequest request){
+        return (CsrfToken) request.getAttribute("_csrf");
+    }
 
     @PostMapping("/signup")
     public User register(@RequestBody User user){
