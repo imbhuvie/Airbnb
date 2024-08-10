@@ -34,9 +34,9 @@ public class Property {
 //    @OneToMany(mappedBy = "property")
 //    private List<Review> reviews;
 
-    @ManyToOne
-    @JoinColumn(name = "owner_id")
-    private User owner;
+//    @ManyToOne
+//    @JoinColumn(name = "owner_id")
+//    private User owner;
 }
 
 

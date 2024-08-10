@@ -44,7 +44,7 @@ public class PropertyService {
                 existingProperty.setPetAllowed(property.isPetAllowed());
                 existingProperty.setMaxCheckoutTimeInNights(property.getMaxCheckoutTimeInNights());
                 existingProperty.setExtraCharges(property.getExtraCharges());
-                existingProperty.setOwner(property.getOwner());
+//                existingProperty.setOwner(property.getOwner());
                 propertyRepository.save(existingProperty);
                 return existingProperty;
         }

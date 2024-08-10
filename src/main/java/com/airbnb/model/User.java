@@ -32,8 +32,8 @@ public class User {
 
     private String phoneNumber;
 
-    @OneToMany(mappedBy = "owner")
-    private List<Property> properties;
+//    @OneToMany(mappedBy = "owner")
+//    private List<Property> properties;
 
 //    @OneToMany(mappedBy = "user")
 //    private List<Review> reviews;
