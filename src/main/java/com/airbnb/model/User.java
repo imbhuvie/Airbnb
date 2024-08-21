@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.hibernate.annotations.Fetch;
 
 import java.util.List;
 
@@ -32,8 +33,8 @@ public class User {
 
     private String phoneNumber;
 
-//    @OneToMany(mappedBy = "owner")
-//    private List<Property> properties;
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    private List<Property> properties;
 
 //    @OneToMany(mappedBy = "user")
 //    private List<Review> reviews;
