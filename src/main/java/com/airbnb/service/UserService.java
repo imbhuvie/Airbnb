@@ -28,6 +28,13 @@ public class UserService {
 
     public User register(User user) {
         user.setPassword(encoder.encode(user.getPassword()));
+        if (userRepository.existsByUsername(user.getUsername())) {
+            throw new IllegalArgumentException("Username already exists");
+        }
+
+        if (userRepository.existsByEmail(user.getEmail())) {
+            throw new IllegalArgumentException("Email already exists");
+        }
         return userRepository.save(user);
     }
 
@@ -44,5 +51,13 @@ public class UserService {
         return jwtService.generateToken(user.getUsername());
         }
         else return "Failed to login";
+    }
+
+    public User getUser(int id) {
+        return userRepository.findById((long) id).orElse(null);
+    }
+
+    public List<User> getAllUser() {
+        return userRepository.findAll();
     }
 }

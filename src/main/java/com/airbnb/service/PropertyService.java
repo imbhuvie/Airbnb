@@ -1,6 +1,7 @@
 package com.airbnb.service;
 
 import com.airbnb.model.Property;
+import com.airbnb.model.User;
 import com.airbnb.repository.PropertyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -61,5 +62,10 @@ public class PropertyService {
         }
         else return false;
 
+    }
+
+    public List<Property> getPropertyByUserId(User user) {
+        return propertyRepository.findByOwner(user);
+//        return null;
     }
 }

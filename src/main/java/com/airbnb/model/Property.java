@@ -1,6 +1,7 @@
 package com.airbnb.model;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,7 +26,7 @@ public class Property {
     private BigDecimal pricePerNight;
     private int numberOfBedrooms;
     private int numberOfBathrooms;
-    private boolean isAvailable;
+    private boolean available;
     private boolean drinkAllowed;
     private boolean petAllowed;
     private int maxCheckoutTimeInNights;
@@ -35,7 +36,9 @@ public class Property {
 //    private List<Review> reviews;
 
     @ManyToOne()
+    @JsonBackReference
     private User owner;
+
 }
 
 
